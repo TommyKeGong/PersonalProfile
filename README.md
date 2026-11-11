@@ -24,20 +24,20 @@ npm run preview
 - `src/features/ai-assistant/` — reserved boundary for a future, optional assistant UI.
 - `src/types/aiAssistant.ts` — chat request, response, citation, and configuration interfaces.
 - `docs/ai-assistant-contract.md` — proposed independent FastAPI contract.
-- `public/` — favicon, robots, sitemap, and web manifest.
+- `public/` — logo, robots, sitemap, and web manifest.
 
 The frontend has no backend dependency and does not connect to the E-CARGO Knowledge Agent. The future assistant must use its own service, data store, credentials, and deployment.
 
 ## Deployment
 
-Cloudflare Pages settings:
+The site is deployed as a Cloudflare Worker with static assets through Wrangler:
 
-- Framework preset: Vite
-- Build command: `npm run build`
-- Output directory: `dist`
-- Production branch: `main`
+```bash
+npm run build
+npm exec wrangler -- deploy --name ke-gong-portfolio --assets dist --domains kegong.dev --domains www.kegong.dev
+```
 
-For a Git-connected deployment, connect the standalone repository and set the build configuration above. Configure `kegong.dev` and `www.kegong.dev` as custom domains only after confirming DNS access; preserve unrelated MX, SPF, DKIM, DMARC, and service records. Prefer redirecting `www` to `kegong.dev`.
+The deployment configuration is in [wrangler.jsonc](./wrangler.jsonc). Configure custom domains only after confirming DNS access; preserve unrelated MX, SPF, DKIM, DMARC, and service records.
 
 ## Environment variables
 

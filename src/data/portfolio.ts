@@ -4,6 +4,7 @@ export interface ExperienceItem {
   location: string
   period: string
   summary: string
+  achievement: string
   highlights: string[]
   technologies: string[]
 }
@@ -14,6 +15,19 @@ export interface ProjectItem {
   description: string
   details: string
   technologies: string[]
+  link?: string
+  linkLabel?: string
+}
+
+export interface SelectedProjectItem {
+  title: string
+  label: string
+  description: string
+  details: string
+  technologies: string[]
+  link: string
+  linkLabel: string
+  note: string
 }
 
 export interface ResearchItem {
@@ -29,8 +43,9 @@ export const experience: ExperienceItem[] = [
     company: 'Nipissing University',
     role: 'Software Engineer Intern',
     location: 'North Bay, Ontario, Canada',
-    period: 'May 2026 — Present',
+    period: 'May 2026 - Present',
     summary: 'Building backend systems and computational tooling for qualification evaluation and complex assignment workflows.',
+    achievement: 'Spring Boot platform with AI-assisted evaluations and constraint-based optimization.',
     highlights: [
       'Developed a Java 17 and Spring Boot backend platform for qualification evaluation and complex assignment workflows.',
       'Integrated REST APIs, Google Gemini API, structured prompting, and JSON schema validation.',
@@ -43,8 +58,9 @@ export const experience: ExperienceItem[] = [
     company: 'Climind',
     role: 'AI Developer Intern',
     location: 'Hong Kong SAR, China',
-    period: 'July 2024 — August 2024',
+    period: 'July 2024 - August 2024',
     summary: 'Worked on computer-vision and local LLM deployment experiments for healthcare-oriented applications.',
+    achievement: 'Reduced the rPPG pipeline latency by approximately 30%.',
     highlights: [
       'Developed an rPPG pipeline using OpenCV, Dlib, and Scikit-learn, reaching approximately 92% heart-rate estimation accuracy.',
       'Reduced pipeline latency by approximately 30%.',
@@ -57,8 +73,9 @@ export const experience: ExperienceItem[] = [
     company: 'iDriveCareer Consulting Ltd',
     role: 'Data Engineer Intern',
     location: 'Toronto, Ontario, Canada',
-    period: 'September 2023 — October 2023',
+    period: 'September 2023 - October 2023',
     summary: 'Built automated data workflows for competitor pricing analysis and downstream analytics.',
+    achievement: 'Processed more than 10,000 competitor-pricing records from five external sources.',
     highlights: [
       'Processed more than 10,000 records from five external sources through automated pipelines.',
       'Used Kafka to reduce manual data collection by approximately 95%.',
@@ -74,29 +91,64 @@ export const projects: ProjectItem[] = [
     title: 'E-CARGO Knowledge Agent',
     label: 'AI / RAG project',
     description: 'A source-grounded knowledge system for retrieving relevant evidence from academic documents and producing traceable responses.',
-    details: 'The implementation uses a FastAPI service, PostgreSQL with pgvector, PyMuPDF, Sentence Transformers, Docker, and pytest. The portfolio describes the verified technical direction without exposing private research data, credentials, or unfinished capabilities.',
+    details: 'The verified implementation surface includes PDF ingestion with PyMuPDF, text chunking, Sentence Transformers, PostgreSQL with pgvector, semantic retrieval, LLM integration, citation validation, and a FastAPI service. The portfolio describes the technical direction without exposing private research data, credentials, or unfinished capabilities.',
     technologies: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'Sentence Transformers', 'Docker', 'pytest'],
   },
   {
     title: 'E-CARGO Research & Optimization',
     label: 'Computational research',
     description: 'Research on computational modeling, role assignment, optimization, and scheduling through the E-CARGO perspective.',
-    details: 'The work connects formal modeling with practical allocation problems: representing roles, constraints, and collaboration so that assignment and scheduling decisions can be explored systematically.',
-    technologies: ['Computational modeling', 'Optimization', 'Role assignment', 'Scheduling'],
+    details: 'The public NPRProblem repository separates this work from the RAG project: it clusters agent suitability with K-Means, searches capacity vectors with a Genetic Algorithm, and applies GMRA assignment under role and population constraints. The repository reports approximately 30 minutes for the full pipeline, approximately 1.2 seconds for a single GMRA call, and Q compression below seven minutes; these are repository-reported experiment notes.',
+    technologies: ['K-Means', 'Genetic Algorithm', 'GMRA', 'Optimization', 'Python'],
+    link: 'https://github.com/Tommy-Gong/NPRProblem',
+    linkLabel: 'View research code',
+  },
+]
+
+export const selectedProjects: SelectedProjectItem[] = [
+  {
+    title: 'ML Therapy Prediction',
+    label: 'Public ML pipeline',
+    description: 'A modular Python codebase for therapy-scheme prediction with documented preprocessing, feature reduction, single- and multi-label classification, benchmarking, and feature importance analysis.',
+    details: 'Contributed to a modular Python machine-learning workflow for therapy-scheme prediction, working on selected parts of preprocessing, feature reduction, classification, benchmarking, and feature-importance analysis. The project covers both single- and multi-label prediction and uses structured experiments to compare model behavior.',
+    technologies: ['Python', 'pandas', 'Scikit-learn', 'LazyPredict', 'Matplotlib'],
+    link: 'https://github.com/Tommy-Gong/ML-Therapy-Prediction',
+    linkLabel: 'View repository',
+    note: 'ML workflow contribution',
+  },
+  {
+    title: 'Competitor Pricing Analysis',
+    label: 'Data engineering / analytics',
+    description: 'A public repository for competitor TV-pricing analysis. Its main code collects dynamic retail pages with Selenium, parses product fields with BeautifulSoup, and exports timestamped CSV data for notebook-based analysis.',
+    details: 'Contributed to an end-to-end competitor-pricing analysis workflow spanning dynamic page collection, HTML parsing, data cleaning, and notebook-based analytics. During the related internship, I processed more than 10,000 records from five external sources and helped automate collection and ingestion workflows.',
+    technologies: ['Python', 'Selenium', 'BeautifulSoup', 'pandas', 'Jupyter'],
+    link: 'https://github.com/Tommy-Gong/iDC_Project_3',
+    linkLabel: 'View repository',
+    note: 'Data pipeline contribution',
+  },
+  {
+    title: 'Spotstitch WebApp',
+    label: 'Collaborative full-stack project',
+    description: 'A public React application for inventory and marketplace workflows, with route-driven screens, Redux state, and socket context; the related backend repository exposes Express and Mongoose inventory endpoints.',
+    details: 'As one of three team members, I owned the fitness-course feature across the Django REST backend, data models, and React/JSX frontend. I built administrator workflows for creating and deleting courses, including bounded recursive timetable generation. I also implemented subscription-aware browsing, enrollment with capacity checks, recursive course deletion, and keyword and date-time filtering. On the backend, I worked with Django models, admin CRUD, serializers, URL routing, and REST API behavior. On the frontend, I built course schedules, pagination, error handling, course details, responsive styling, and AJAX interactions that update data without a full-page reload. We tested the feature with the browsable API and Postman.',
+    technologies: ['React', 'Express', 'MongoDB', 'Redux', 'Socket.IO'],
+    link: 'https://github.com/Tommy-Gong/301local',
+    linkLabel: 'View frontend repository',
+    note: 'Full-stack feature ownership',
   },
 ]
 
 export const research: ResearchItem[] = [
   {
     title: 'Canadian NPR Decreasing Policy Making: A Computational Simulation Method using E-CARGO',
-    status: 'Published conference paper · SysCon 2025',
+    status: 'Published conference paper - SysCon 2025',
     description: 'A computational simulation study applying E-CARGO concepts to policy-making dynamics.',
     link: 'https://dblp.org/rec/conf/syscon/Gong0Y25',
     linkLabel: 'View bibliographic record',
   },
   {
-    title: 'Why Imperfect Team Management is Tolerable: An E-CARGO’s Perspective',
-    status: 'Published conference paper · CSCWD 2025',
+    title: "Why Imperfect Team Management is Tolerable: An E-CARGO's Perspective",
+    status: 'Published conference paper - CSCWD 2025',
     description: 'Research on team management and collaboration through an E-CARGO perspective.',
     link: 'https://dblp.org/rec/conf/cscwd/0001YGW25',
     linkLabel: 'View bibliographic record',

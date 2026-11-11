@@ -1,9 +1,12 @@
 {
-  "name": "Ke Gong Portfolio",
+  "name": "Ke Gong - Software Engineer Portfolio",
   "short_name": "Ke Gong",
+  "description": "Software engineering, AI/ML, data engineering, and computational research.",
+  "lang": "en",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#101827",
-  "theme_color": "#101827",
-  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [{ "src": "/logo.png", "sizes": "768x768", "type": "image/png", "purpose": "any maskable" }]
 }
