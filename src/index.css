@@ -102,7 +102,31 @@ details[open] .details-summary svg { transform: rotate(180deg); }
 .project-feature-light { background: var(--off-white); color: var(--charcoal); }
 :root.dark .project-feature-light { background: #e7e7e9; color: var(--charcoal); }
 .architecture-visual { display: grid; place-items: center; background: #0b0b0c; padding: 1.25rem; }
-.optimization-visual { display: grid; place-items: center; background: #e8e8eb; padding: 1.25rem; }
+.optimization-visual { display: grid; place-items: center; background: #e8e8eb; padding: clamp(1rem, 2vw, 1.75rem); }
+.optimization-figures { display: grid; width: 100%; max-width: 820px; gap: 1rem; }
+.optimization-figure { display: grid; grid-template-rows: minmax(0, 1fr) auto; min-width: 0; margin: 0; overflow: hidden; border: 1px solid rgba(29,29,31,.12); background: var(--white); }
+.optimization-figure img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.optimization-figure-flow { background: #050608; }
+.optimization-figure-flow img { background: #050608; }
+.optimization-figure-graphic { background: var(--white); }
+.optimization-graphic { display: block; width: 100%; height: auto; }
+.optimization-graphic-surface { fill: var(--white); }
+.optimization-graphic-grid path { fill: none; stroke: rgba(29,29,31,.08); stroke-width: 1; }
+.optimization-graphic-overline, .optimization-graphic-label, .optimization-graphic-card text, .optimization-graphic-score text, .optimization-graphic-result text, .optimization-graphic-caption { fill: var(--charcoal); font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.optimization-graphic-overline { fill: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: 1.35px; }
+.optimization-graphic-label { fill: rgba(29,29,31,.5); font-size: 8px; font-weight: 700; letter-spacing: 1.1px; }
+.optimization-graphic-card rect, .optimization-graphic-score > rect, .optimization-graphic-result > rect { fill: #f5f5f7; stroke: rgba(29,29,31,.2); stroke-width: 1; }
+.optimization-graphic-card text, .optimization-graphic-score text, .optimization-graphic-result text { font-size: 10px; }
+.optimization-graphic-card text:first-of-type, .optimization-graphic-score text:first-of-type, .optimization-graphic-result text:nth-of-type(2) { font-weight: 700; }
+.optimization-graphic-connector path { fill: none; stroke: var(--blue); stroke-width: 1.5; }
+.optimization-graphic-score .optimization-graphic-bar { fill: rgba(29,29,31,.14); }
+.optimization-graphic-score .optimization-graphic-bar-accent { fill: var(--blue); }
+.optimization-graphic-note { fill: rgba(29,29,31,.55) !important; font-size: 8px !important; letter-spacing: .4px; }
+.optimization-graphic-result circle { fill: var(--blue); }
+.optimization-graphic-result path { fill: none; stroke: var(--white); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.optimization-graphic-caption { fill: rgba(29,29,31,.55); font-size: 8px; letter-spacing: .6px; }
+.optimization-figure figcaption { padding: .7rem .8rem .75rem; color: var(--muted); background: color-mix(in srgb, var(--white) 92%, transparent); font-size: .68rem; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; }
+.optimization-figure-flow figcaption { color: rgba(255,255,255,.62); background: #111317; }
 .project-diagram { display: block; height: auto; max-height: 100%; width: 100%; }
 .diagram-grid path, .optimization-grid path { fill: none; stroke: rgba(255,255,255,.08); stroke-width: 1; }
 .optimization-grid path { stroke: rgba(29,29,31,.09); }
@@ -237,6 +261,7 @@ details[open] .details-summary svg { transform: rotate(180deg); }
 .orbit-label { position: absolute; color: rgba(29,29,31,.7); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; }
 .label-one { left: 20%; top: 28%; }.label-two { right: 17%; top: 36%; }.label-three { left: 35%; bottom: 20%; }
 .research-row { display: grid; gap: 1.2rem; border-bottom: 1px solid var(--line); padding: 2rem 0; }
+.research-meta { color: var(--muted); font-size: .83rem; line-height: 1.5; }
 .research-title { max-width: 800px; font-size: clamp(1.3rem, 2.3vw, 2.2rem); line-height: 1.15; letter-spacing: -.045em; }
 .skill-row { display: grid; gap: 1rem; border-bottom: 1px solid var(--line); padding: 1.7rem 0; }
 .skill-row h3 { color: var(--blue); font-size: .72rem; font-weight: 650; letter-spacing: .13em; text-transform: uppercase; }
@@ -383,6 +408,10 @@ details[open] .details-summary svg { transform: rotate(180deg); }
   .skill-row { grid-template-columns: 20% 1fr; align-items: baseline; }
   .selected-project-row { grid-template-columns: 4.5rem minmax(0, 1fr) 18rem; }
   .selected-project-meta { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; }
+}
+
+@media (min-width: 1000px) {
+  .optimization-figures { grid-template-columns: 1.08fr .92fr; align-items: stretch; }
 }
 
 @media (max-width: 639px) {

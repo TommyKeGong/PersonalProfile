@@ -32,6 +32,9 @@ export interface SelectedProjectItem {
 
 export interface ResearchItem {
   title: string
+  authors: string
+  year: string
+  venue: string
   status: string
   description: string
   link?: string
@@ -141,22 +144,61 @@ export const selectedProjects: SelectedProjectItem[] = [
 export const research: ResearchItem[] = [
   {
     title: 'Canadian NPR Decreasing Policy Making: A Computational Simulation Method using E-CARGO',
-    status: 'Published conference paper - SysCon 2025',
-    description: 'A computational simulation study applying a role-based collaboration framework to policy-making dynamics.',
-    link: 'https://dblp.org/rec/conf/syscon/Gong0Y25',
-    linkLabel: 'View bibliographic record',
+    authors: 'Ke Gong, Haibin Zhu, Tianshuo Yang',
+    year: '2025',
+    venue: 'IEEE International Systems Conference (SysCon)',
+    status: 'Published · Conference paper',
+    description: 'A computational simulation study of Canadian NPR policy making using a role-based collaboration framework.',
+    link: 'https://doi.org/10.1109/SYSCON64521.2025.11014843',
+    linkLabel: 'View publication',
   },
   {
     title: "Why Imperfect Team Management is Tolerable: An E-CARGO's Perspective",
-    status: 'Published conference paper - CSCWD 2025',
-    description: 'Research on team management and collaboration through computational modeling and the E-CARGO framework.',
-    link: 'https://dblp.org/rec/conf/cscwd/0001YGW25',
-    linkLabel: 'View bibliographic record',
+    authors: 'Haibin Zhu, Tianshuo Yang, Ke Gong, Chun Wang',
+    year: '2025',
+    venue: 'IEEE International Conference on Computer Supported Cooperative Work in Design (CSCWD)',
+    status: 'Published · Conference paper',
+    description: 'A computational study of team management and collaboration when role assignments are imperfect.',
+    link: 'https://doi.org/10.1109/CSCWD64889.2025.11033439',
+    linkLabel: 'View publication',
   },
   {
-    title: 'Role assignment, optimization, and computational collaboration',
-    status: 'Ongoing research',
-    description: 'Current research interests include artificial intelligence, intelligent systems, computational modeling, optimization, knowledge retrieval, and decision-making at Nipissing University.',
+    title: 'Computational Thinking, Object-Oriented Programming to Role-Based Collaboration',
+    authors: 'Ke Gong, Haibin Zhu, Tianshuo Yang',
+    year: '2025',
+    venue: 'International Symposium on E-CARGO and Applications (E-CARGO)',
+    status: 'Published · Conference paper',
+    description: 'An exploration of how computational thinking and object-oriented programming connect with role-based collaboration.',
+    link: 'https://doi.org/10.1109/E-CARGO65996.2025.11139209',
+    linkLabel: 'View publication',
+  },
+  {
+    title: 'Role-based LLM Multi-Agent Systems for Collaborative Capture-the-Flag Challenges Solving',
+    authors: 'Yunzhe Tian, Xingyu Wu, Ke Gong, Yike Li, Wenjia Niu, Haibin Zhu',
+    year: '2026',
+    venue: 'IEEE International Conference on Computer Supported Cooperative Work in Design (CSCWD)',
+    status: 'Published · Conference paper',
+    description: 'A role-based multi-agent system for collaborative Capture-the-Flag challenges, using E-CARGO to assign roles across heterogeneous language-model agents.',
+    link: 'https://doi.org/10.1109/CSCWD68734.2026.11582070',
+    linkLabel: 'View publication',
+  },
+  {
+    title: 'Dumpster Management: A Simulation Method Using E-Cargo',
+    authors: 'Tianshuo Yang, Haibin Zhu, Xing Yang, Ke Gong, Chun Wang',
+    year: '2025',
+    venue: 'SSRN',
+    status: 'Preprint · SSRN · not peer-reviewed',
+    description: 'A public preprint on dumpster management simulation using E-CARGO and Group Role Assignment, evaluated through a Victoria, British Columbia case study.',
+    link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5295585',
+    linkLabel: 'View preprint',
+  },
+  {
+    title: 'AI and computational research',
+    authors: 'Current research focus',
+    year: '',
+    venue: 'Nipissing University',
+    status: 'Research focus',
+    description: 'Research interests include artificial intelligence, intelligent systems, computational modeling, optimization, knowledge retrieval, and decision-making.',
   },
 ]
 

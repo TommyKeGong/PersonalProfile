@@ -61,49 +61,69 @@ export function KnowledgeArchitecture() {
 
 export function OptimizationDiagram() {
   return (
-    <svg className="project-diagram" viewBox="0 0 760 500" role="img" aria-labelledby="optimization-diagram-title optimization-diagram-desc">
-      <title id="optimization-diagram-title">E-CARGO optimization research model</title>
-      <desc id="optimization-diagram-desc">Agent and role data is clustered, candidate capacity vectors are searched with a genetic algorithm, and GMRA assigns roles under constraints.</desc>
-      <g className="optimization-grid">
-        <path d="M46 106H714M46 250H714M46 394H714" />
-        <path d="M176 40V460M330 40V460M484 40V460M638 40V460" />
-      </g>
-      <text className="diagram-overline" x="46" y="35">RESEARCH MODEL / E-CARGO ROLE ASSIGNMENT</text>
-      <g className="optimization-connector">
-        <path d="M166 170H218" />
-        <path d="M318 170H370" />
-        <path d="M470 170H522" />
-        <path d="M622 170V310" />
-        <path d="M522 350H470" />
-        <path d="M370 350H318" />
-        <path d="M218 350H166" />
-      </g>
-      <g className="optimization-node">
-        <rect x="46" y="128" width="120" height="84" rx="2" />
-        <text x="62" y="157">agents</text><text x="62" y="178">+ roles</text><text x="62" y="198">ability data</text>
-      </g>
-      <g className="optimization-node optimization-node-blue">
-        <rect x="218" y="128" width="100" height="84" rx="2" />
-        <text x="235" y="157">K-Means</text><text x="235" y="178">cluster</text><text x="235" y="198">suitability</text>
-      </g>
-      <g className="optimization-node">
-        <rect x="370" y="128" width="100" height="84" rx="2" />
-        <text x="390" y="157">Genetic</text><text x="390" y="178">Algorithm</text><text x="390" y="198">capacity search</text>
-      </g>
-      <g className="optimization-node optimization-node-blue">
-        <rect x="522" y="128" width="100" height="84" rx="2" />
-        <text x="546" y="157">GMRA</text><text x="546" y="178">assignment</text><text x="546" y="198">solver</text>
-      </g>
-      <g className="optimization-node optimization-node-result">
-        <rect x="522" y="310" width="100" height="84" rx="2" />
-        <text x="537" y="339">constraints</text><text x="537" y="360">roles + limits</text><text x="537" y="380">tested output</text>
-      </g>
-      <g className="optimization-metric">
-        <text x="370" y="332">README-REPORTED EXPERIMENT NOTES</text>
-        <text x="370" y="360">single GMRA call</text><text x="620" y="360">~1.2 s</text>
-        <text x="370" y="384">Q compression</text><text x="620" y="384">&lt; 7 min</text>
-      </g>
-      <text className="diagram-caption" x="46" y="445">model constraints / search assignments / inspect outcomes</text>
-    </svg>
+    <div className="optimization-figures" aria-label="E-CARGO research figures">
+      <figure className="optimization-figure optimization-figure-flow">
+        <img src="/research/ecargo-collaboration-flow.png" alt="Flowchart showing role negotiation, agent evaluation, group role assignment, role playing, transfer, re-evaluation, and collaboration completion." />
+        <figcaption>Role-based collaboration workflow</figcaption>
+      </figure>
+      <figure className="optimization-figure optimization-figure-graphic">
+        <svg className="optimization-graphic" viewBox="0 0 520 420" role="img" aria-labelledby="optimization-graphic-title optimization-graphic-desc">
+          <title id="optimization-graphic-title">Constraint-aware role assignment optimization</title>
+          <desc id="optimization-graphic-desc">Candidate agents and roles move through constraint scoring before a feasible Group Multi-Role Assignment is selected.</desc>
+          <rect className="optimization-graphic-surface" x="0" y="0" width="520" height="420" />
+          <g className="optimization-graphic-grid">
+            <path d="M28 74H492M28 140H492M28 206H492M28 272H492M28 338H492" />
+            <path d="M118 44V378M250 44V378M382 44V378" />
+          </g>
+          <text className="optimization-graphic-overline" x="28" y="32">OPTIMIZATION / FEASIBLE SEARCH</text>
+          <text className="optimization-graphic-label" x="28" y="62">CANDIDATES</text>
+          <text className="optimization-graphic-label" x="198" y="62">CONSTRAINT SCORE</text>
+          <text className="optimization-graphic-label" x="382" y="62">SELECTED OUTPUT</text>
+          <g className="optimization-graphic-card">
+            <rect x="28" y="98" width="122" height="46" rx="2" />
+            <text x="42" y="118">agents + roles</text>
+            <text x="42" y="134">ability data</text>
+            <rect x="28" y="166" width="122" height="46" rx="2" />
+            <text x="42" y="186">candidate A</text>
+            <text x="42" y="202">role coverage</text>
+            <rect x="28" y="234" width="122" height="46" rx="2" />
+            <text x="42" y="254">candidate B</text>
+            <text x="42" y="270">capacity fit</text>
+          </g>
+          <g className="optimization-graphic-connector">
+            <path d="M150 121H194" />
+            <path d="M150 189H194" />
+            <path d="M150 257H194" />
+            <path d="M326 189H370" />
+            <path d="M326 257H350V290H370" />
+          </g>
+          <g className="optimization-graphic-score">
+            <rect x="194" y="98" width="132" height="182" rx="2" />
+            <text x="210" y="122">score candidates</text>
+            <text x="210" y="148">role fit</text>
+            <rect className="optimization-graphic-bar" x="210" y="158" width="88" height="8" rx="4" />
+            <rect className="optimization-graphic-bar optimization-graphic-bar-accent" x="210" y="158" width="68" height="8" rx="4" />
+            <text x="210" y="188">role limits</text>
+            <rect className="optimization-graphic-bar" x="210" y="198" width="88" height="8" rx="4" />
+            <rect className="optimization-graphic-bar optimization-graphic-bar-accent" x="210" y="198" width="54" height="8" rx="4" />
+            <text x="210" y="228">constraints</text>
+            <rect className="optimization-graphic-bar" x="210" y="238" width="88" height="8" rx="4" />
+            <rect className="optimization-graphic-bar optimization-graphic-bar-accent" x="210" y="238" width="76" height="8" rx="4" />
+            <text className="optimization-graphic-note" x="210" y="264">feasibility check</text>
+          </g>
+          <g className="optimization-graphic-result">
+            <rect x="370" y="150" width="122" height="148" rx="2" />
+            <circle cx="394" cy="180" r="8" />
+            <path d="M390 180l3 3 6-7" />
+            <text x="414" y="184">feasible</text>
+            <text x="386" y="222">GMRA</text>
+            <text x="386" y="244">role assignment</text>
+            <text x="386" y="274">roles + limits</text>
+          </g>
+          <text className="optimization-graphic-caption" x="28" y="382">model constraints / compare candidates / select a feasible assignment</text>
+        </svg>
+        <figcaption>Constraint-aware optimization view</figcaption>
+      </figure>
+    </div>
   )
 }
