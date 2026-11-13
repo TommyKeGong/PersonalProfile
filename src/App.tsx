@@ -197,7 +197,7 @@ function App() {
 
         <section id="research" className="research-section editorial-band">
           <div className="mx-auto grid max-w-[1440px] gap-14 px-6 py-24 sm:px-10 lg:grid-cols-[0.65fr_1.35fr] lg:px-16 lg:py-36">
-            <div className="reveal"><p className="eyebrow">04 / Research</p><h2 className="section-title mt-6">Questions worth<br className="hidden sm:block" /> modeling.</h2><p className="body-copy mt-8 max-w-sm">Research is where I make assumptions explicit and look for useful structure in complex systems.</p></div>
+            <div className="reveal"><p className="eyebrow">04 / Research</p><h2 className="section-title mt-6">AI &amp; Computational<br className="hidden sm:block" /> Research</h2><p className="body-copy mt-8 max-w-sm">My research focuses on intelligent systems, computational modeling, and optimization. I explore how artificial intelligence and computational methods can support complex decision-making, improve collaboration, and solve real-world problems.</p></div>
             <div className="research-list reveal reveal-delay-1">{research.map((item, index) => <article className="research-row" key={item.title}><span className="research-number">04.{String(index + 1).padStart(2, '0')}</span><div><h3 className="research-title">{item.title}</h3><p className="research-status mt-3">{item.status}</p><p className="body-copy mt-4 max-w-2xl text-base">{item.description}</p>{item.link && <a className="blue-link mt-5 inline-flex" href={item.link} target="_blank" rel="noreferrer">{item.linkLabel} <ArrowUpRight size={14} /></a>}</div></article>)}</div>
           </div>
         </section>

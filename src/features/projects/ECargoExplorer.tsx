@@ -95,8 +95,8 @@ export function ECargoExplorer() {
   return (
     <section className="ecargo-explorer" aria-labelledby="ecargo-explorer-title">
       <div className="ecargo-explorer-intro">
-        <div><p className="project-kicker">03.03 / Interactive case study · E-CARGO</p><h3 id="ecargo-explorer-title">See the system<br /><span>think in layers.</span></h3></div>
-        <div className="ecargo-explorer-copy"><p>A product-style view of role relationships, evaluation, and constrained assignment — presented with sanitized fixture data and no connection to the live service.</p><a className="blue-link" href="https://e-cargo.info/" target="_blank" rel="noreferrer">Open Role Dictionary <ArrowUpRight size={14} /></a></div>
+        <div><p className="project-kicker">03.03 / Full-stack web application</p><h3 id="ecargo-explorer-title">Full-Stack Web<br /><span>Application Development.</span></h3></div>
+        <div className="ecargo-explorer-copy"><p>Collaborated with a development team to build a functional web application, contributing to both frontend and backend implementation. Worked on assigned features across the application stack, supporting user-facing functionality and backend integration as part of a collaborative software engineering project.</p><div className="ecargo-explorer-actions"><a className="ecargo-primary-cta" href="https://e-cargo.info/" target="_blank" rel="noopener noreferrer">Explore Live Website <ArrowUpRight size={16} aria-hidden="true" /></a></div></div>
       </div>
       <div className="ecargo-window">
         <div className="ecargo-window-chrome"><div className="ecargo-window-dots"><span /><span /><span /></div><span className="ecargo-window-title"><Layers3 size={14} /> E-CARGO Systems Explorer</span><span className="ecargo-window-state">interactive preview</span></div>

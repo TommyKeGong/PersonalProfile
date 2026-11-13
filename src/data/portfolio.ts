@@ -88,16 +88,16 @@ export const experience: ExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
   {
-    title: 'E-CARGO Knowledge Agent',
+    title: 'Knowledge Agent',
     label: 'AI / RAG project',
-    description: 'A source-grounded knowledge system for retrieving relevant evidence from academic documents and producing traceable responses.',
+    description: 'An AI-powered research assistant that retrieves relevant information from academic documents and generates evidence-grounded answers with verifiable citations. Built using Retrieval-Augmented Generation (RAG), the system integrates semantic search, vector databases, and local large language models to support academic research. Its initial knowledge base focuses on E-CARGO, a framework for role-based collaboration and computational problem-solving.',
     details: 'The verified implementation surface includes PDF ingestion with PyMuPDF, text chunking, Sentence Transformers, PostgreSQL with pgvector, semantic retrieval, LLM integration, citation validation, and a FastAPI service. The portfolio describes the technical direction without exposing private research data, credentials, or unfinished capabilities.',
     technologies: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'Sentence Transformers', 'Docker', 'pytest'],
   },
   {
     title: 'E-CARGO Research & Optimization',
-    label: 'Computational research',
-    description: 'Research on computational modeling, role assignment, optimization, and scheduling through the E-CARGO perspective.',
+    label: 'Computational optimization research',
+    description: 'Research on computational modeling, role assignment, optimization, and scheduling, using E-CARGO as a framework for structured collaboration.',
     details: 'The public NPRProblem repository separates this work from the RAG project: it clusters agent suitability with K-Means, searches capacity vectors with a Genetic Algorithm, and applies GMRA assignment under role and population constraints. The repository reports approximately 30 minutes for the full pipeline, approximately 1.2 seconds for a single GMRA call, and Q compression below seven minutes; these are repository-reported experiment notes.',
     technologies: ['K-Means', 'Genetic Algorithm', 'GMRA', 'Optimization', 'Python'],
     link: 'https://github.com/Tommy-Gong/NPRProblem',
@@ -133,7 +133,7 @@ export const selectedProjects: SelectedProjectItem[] = [
     details: 'As one of three team members, I owned the fitness-course feature across the Django REST backend, data models, and React/JSX frontend. I built administrator workflows for creating and deleting courses, including bounded recursive timetable generation. I also implemented subscription-aware browsing, enrollment with capacity checks, recursive course deletion, and keyword and date-time filtering. On the backend, I worked with Django models, admin CRUD, serializers, URL routing, and REST API behavior. On the frontend, I built course schedules, pagination, error handling, course details, responsive styling, and AJAX interactions that update data without a full-page reload. We tested the feature with the browsable API and Postman.',
     technologies: ['React', 'Express', 'MongoDB', 'Redux', 'Socket.IO'],
     link: 'https://github.com/Tommy-Gong/301local',
-    linkLabel: 'View frontend repository',
+    linkLabel: 'View repository',
     note: 'Full-stack feature ownership',
   },
 ]
@@ -142,21 +142,21 @@ export const research: ResearchItem[] = [
   {
     title: 'Canadian NPR Decreasing Policy Making: A Computational Simulation Method using E-CARGO',
     status: 'Published conference paper - SysCon 2025',
-    description: 'A computational simulation study applying E-CARGO concepts to policy-making dynamics.',
+    description: 'A computational simulation study applying a role-based collaboration framework to policy-making dynamics.',
     link: 'https://dblp.org/rec/conf/syscon/Gong0Y25',
     linkLabel: 'View bibliographic record',
   },
   {
     title: "Why Imperfect Team Management is Tolerable: An E-CARGO's Perspective",
     status: 'Published conference paper - CSCWD 2025',
-    description: 'Research on team management and collaboration through an E-CARGO perspective.',
+    description: 'Research on team management and collaboration through computational modeling and the E-CARGO framework.',
     link: 'https://dblp.org/rec/conf/cscwd/0001YGW25',
     linkLabel: 'View bibliographic record',
   },
   {
     title: 'Role assignment, optimization, and computational collaboration',
     status: 'Ongoing research',
-    description: 'Current research interests include computational modeling, role assignment, optimization, and scheduling at Nipissing University.',
+    description: 'Current research interests include artificial intelligence, intelligent systems, computational modeling, optimization, knowledge retrieval, and decision-making at Nipissing University.',
   },
 ]
 

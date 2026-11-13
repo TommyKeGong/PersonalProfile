@@ -1,13 +1,13 @@
 export function KnowledgeArchitecture() {
   return (
     <svg className="project-diagram" viewBox="0 0 760 500" role="img" aria-labelledby="knowledge-diagram-title knowledge-diagram-desc">
-      <title id="knowledge-diagram-title">E-CARGO Knowledge Agent evidence pipeline</title>
+      <title id="knowledge-diagram-title">Knowledge Agent evidence pipeline</title>
       <desc id="knowledge-diagram-desc">PDF documents are parsed and chunked, embedded with Sentence Transformers, stored in PostgreSQL with pgvector, retrieved semantically, passed to an LLM, and checked for citations before a source-grounded response.</desc>
       <g className="diagram-grid">
         <path d="M40 102H720M40 250H720M40 398H720" />
         <path d="M160 40V460M320 40V460M480 40V460M640 40V460" />
       </g>
-      <text className="diagram-overline" x="40" y="35">VERIFIED IMPLEMENTATION SURFACE / E-CARGO KNOWLEDGE AGENT</text>
+      <text className="diagram-overline" x="40" y="35">VERIFIED IMPLEMENTATION SURFACE / KNOWLEDGE AGENT</text>
       <g className="diagram-connector">
         <path d="M148 150H190" />
         <path d="M278 150H320" />

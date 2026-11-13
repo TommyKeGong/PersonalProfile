@@ -1,11 +1,31 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "ke-gong-portfolio",
+  "main": "rag-worker.ts",
   "compatibility_date": "2026-11-10",
+  "workers_dev": false,
+  "preview_urls": false,
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "dist"
-  }
+    "directory": "dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/v1/chat"]
+  },
+  "vars": {
+    "RAG_API_ORIGIN": "https://rag-api-test.kegong.dev",
+    "AI_CHAT_ENABLED": "false"
+  },
+  "ratelimits": [
+    {
+      "name": "CHAT_RATE_LIMITER",
+      "namespace_id": "511112",
+      "simple": {
+        "limit": 5,
+        "period": 60
+      }
+    }
+  ]
 }
